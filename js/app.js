@@ -15,11 +15,22 @@ const ell_calculate = document.getElementById('ell_calculate_area_btn');
 //output triangle area
 const calculate_area = document.getElementById('calculate_area');
 
+//card 
+const geometry_card = document.querySelectorAll('.geo_card .card');
+
 //event listener for the button
 
 let area_data = [];
 let half = true;
 
+
+/**
+ * 
+ * @param {*} geo_name is geometry shape name 
+ * @param {*} geo_base  height
+ * @param {*} geo_height width
+ * @returns 
+ */
 function area_calculation(geo_name, geo_base, geo_height) {
 
     //selector for the form
@@ -59,6 +70,11 @@ function area_calculation(geo_name, geo_base, geo_height) {
     }
 
 }
+
+
+/**
+ * here is all event listener
+ */
 
 
 //triangle event
@@ -102,16 +118,19 @@ ell_calculate.addEventListener('submit', function (e) {
 })
 
 
-
 all_geometry_area();
 
+/**
+ * this function helps 
+ * to show all area output sidebar
+ */
 function all_geometry_area() {
     let all_geometry_area = area_data;
     let output = '';
     all_geometry_area.forEach(function (item, index) {
         output += `<div class="d-flex justify-content-between  my-2">
             <p id="geometry_name"> <span id="area-output-serial-number">${(index+1)+"."}</span>${item.name}</p>
-        <p id="total_area">${item.area} <span>cm</span></p>
+        <p id="total_area">${item.area} <span>cm<sup>2</sup></span></p>
           <button id="convet_cm_to_mt" class="btn btn-primary">convert to m<sup>2</sup></button>
          </div>`
     })
@@ -119,8 +138,9 @@ function all_geometry_area() {
 }
 
 
-const geometry_card = document.querySelectorAll('.geo_card .card');
-
+/**
+ * this events helps us to give bg color when we hover geometry card
+ */
 //mouse over event
 geometry_card.forEach(function (item) {
     item.addEventListener('mouseenter', function (e) {
@@ -136,8 +156,6 @@ geometry_card.forEach(function (item) {
     )
 
 })
-
-
 
 //color generator for the geometry card mouse over
 function colorGenerate() {
