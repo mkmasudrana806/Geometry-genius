@@ -123,13 +123,13 @@ const geometry_card = document.querySelectorAll('.geo_card .card');
 
 //mouse over event
 geometry_card.forEach(function (item) {
-    item.addEventListener('mouseover', function (e) {
+    item.addEventListener('mouseenter', function (e) {
         let color_array = colorGenerate();
         item.style.backgroundColor = `rgb(${color_array[0]},${color_array[1]},${color_array[2]})`;
         item.style.transition = 'all 1s ease';
     })
     //mouse out event
-    item.addEventListener('mouseout', function (e) {
+    item.addEventListener('mouseleave', function (e) {
         item.style.backgroundColor = `#fff`;
         item.style.transition = 'all 1s ease';
     }
@@ -148,10 +148,3 @@ function colorGenerate() {
     }
     return color_array;
 }
-
-
-//what is dom ? what is the purpose of dom
-
-//event bubble 
-
-//call by function
