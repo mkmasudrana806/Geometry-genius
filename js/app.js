@@ -57,10 +57,6 @@ function area_calculation(geo_name, geo_base, geo_height) {
 
 
     }
-    //background color generator when we click the button
-    let color_array = colorGenerate();
-    let color = `rgb(${color_array[0]},${color_array[1]},${color_array[2]})`;
-    document.getElementById(geo_name).style.background = color;
 
 }
 
@@ -135,8 +131,20 @@ calculate_area.addEventListener('click', function (e) {
 })
 
 
+const geometry_card = document.querySelectorAll('.geo_card .card');
 
-//color generator for the geometry card
+//mouse over event
+geometry_card.forEach(function (item) {
+    item.addEventListener('mouseover', function (e) {
+        let color_array = colorGenerate();
+        item.style.backgroundColor = `rgb(${color_array[0]},${color_array[1]},${color_array[2]})`;
+        item.style.transition = 'all 1s ease';
+    })
+})
+
+
+
+//color generator for the geometry card mouse over
 function colorGenerate() {
     let color_array=[];
     for (let i = 0; i < 3; i++) {
