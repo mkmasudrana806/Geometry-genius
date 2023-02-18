@@ -29,7 +29,7 @@ function area_calculation(geo_name, geo_base, geo_height) {
 
     //if values are not entered
     if (base.value == '' || height.value == '') {
-        log('Please enter the values');
+        alert('Please enter the values');
         return;
     } else {
 
@@ -57,6 +57,11 @@ function area_calculation(geo_name, geo_base, geo_height) {
 
 
     }
+    //background color generator when we click the button
+    let color_array = colorGenerate();
+    let color = `rgb(${color_array[0]},${color_array[1]},${color_array[2]})`;
+    document.getElementById(geo_name).style.background = color;
+
 }
 
 
@@ -116,3 +121,34 @@ function all_geometry_area() {
     })
     calculate_area.innerHTML = output;
 }
+
+
+//convert cm to m
+calculate_area.addEventListener('click', function (e) {
+    e.preventDefault();
+    let btn = e.target;
+    if (btn.id == 'convet_cm_to_mt') {
+        let area = btn.parentElement.children[1].innerText;
+        let area_m = (area / 10000).toFixed(2);
+        btn.parentElement.children[1].innerText = area_m + " m";
+    }
+})
+
+
+
+//color generator for the geometry card
+function colorGenerate() {
+    let color_array=[];
+    for (let i = 0; i < 3; i++) {
+        let color = Math.floor(Math.random() * 255);
+        color_array.push(color);
+    }
+    return color_array;
+}
+
+
+//what is dom ? what is the purpose of dom
+
+//event bubble 
+
+//call by function

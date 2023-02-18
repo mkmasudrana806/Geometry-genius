@@ -4,3 +4,8 @@
     object-fit: contain;
     margin: 6px auto;
 }
+
+/* .geo_card .card:hover{
+    background-color: bisque;
+    transition: 0.3s;
+} */
