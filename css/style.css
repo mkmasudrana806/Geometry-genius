@@ -1,0 +1,6 @@
+.geometry img {
+    width: 90%;
+    height: 190px;
+    object-fit: contain;
+    margin: 6px auto;
+}
