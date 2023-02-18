@@ -78,7 +78,7 @@ function all_geometry_area() {
         output += `<div class="d-flex justify-content-between  my-2">
             <p id="geometry_name"> <span id="area-output-serial-number">${(index+1)+"."}</span>${item.name}</p>
         <p id="total_area">${item.area} <span>cm<sup>2</sup></span></p>
-          <button id="convet_cm_to_mt" class="btn btn-primary">convert to m<sup>2</sup></button>
+          <button id="convet_cm_to_mt" class="btn btn-primary btn-sm">convert to m<sup>2</sup></button>
          </div>`
     })
     calculate_area.innerHTML = output;
