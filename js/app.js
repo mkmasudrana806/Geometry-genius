@@ -119,18 +119,6 @@ function all_geometry_area() {
 }
 
 
-//convert cm to m
-calculate_area.addEventListener('click', function (e) {
-    e.preventDefault();
-    let btn = e.target;
-    if (btn.id == 'convet_cm_to_mt') {
-        let area = btn.parentElement.children[1].innerText;
-        let area_m = (area / 10000).toFixed(2);
-        btn.parentElement.children[1].innerText = area_m + " m";
-    }
-})
-
-
 const geometry_card = document.querySelectorAll('.geo_card .card');
 
 //mouse over event
@@ -140,6 +128,13 @@ geometry_card.forEach(function (item) {
         item.style.backgroundColor = `rgb(${color_array[0]},${color_array[1]},${color_array[2]})`;
         item.style.transition = 'all 1s ease';
     })
+    //mouse out event
+    item.addEventListener('mouseout', function (e) {
+        item.style.backgroundColor = `#fff`;
+        item.style.transition = 'all 1s ease';
+    }
+    )
+
 })
 
 
